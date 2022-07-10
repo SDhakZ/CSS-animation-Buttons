@@ -1,0 +1,1041 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  height: 20vh;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+/*------------------------Skew-----------------------*/
+.Skew {
+  background-color: rgb(143, 255, 218);
+  position: relative;
+  z-index: 0;
+}
+.Skew a {
+  text-decoration: none;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  position: relative;
+  transition: color 1s;
+}
+
+.Skew a:before {
+  content: "";
+  position: absolute;
+  color: white;
+  top: -10px;
+  left: -1.5%;
+  background-color: rgb(231, 56, 56);
+  height: 100%;
+  width: 50%;
+  transform: skewX(30deg);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -1;
+}
+
+.Skew a:hover::before {
+  transform: skewX(0deg);
+  left: 50%;
+  top: 0;
+}
+
+.Skew a:after {
+  content: "";
+  position: absolute;
+  color: white;
+  bottom: -10px;
+  right: -2%;
+  background-color: rgb(5, 40, 117);
+  height: 100%;
+  width: 50%;
+  transform: skewX(30deg);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -1;
+}
+
+.Skew a:hover::after {
+  transform: skewX(0deg);
+  right: 50%;
+  bottom: 0;
+}
+
+.Skew a:hover {
+  color: rgb(180, 240, 255);
+}
+/*------------------------Skew-----------------------*/
+
+/*------------------------Fold-----------------------*/
+.Fold a {
+  text-decoration: none;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  font-family: sans-serif;
+  position: relative;
+  perspective: 1000px;
+  transition: color 1s;
+}
+
+.Fold a:before {
+  content: "";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10%;
+  right: -3%;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  transform-origin: bottom;
+  transform: rotateX(0deg);
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.Fold a:hover::before {
+  transform: rotateX(-80deg);
+  right: 0;
+  top: 0;
+}
+
+.Fold a:after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: 3%;
+  background-color: rgb(0, 63, 146);
+  opacity: 60%;
+  height: 100%;
+  width: 100%;
+  transform-origin: top;
+  transform: rotateX(0deg);
+  transition: all 0.5s;
+}
+
+.Fold a:hover::after {
+  transform: rotateX(80deg);
+  right: 0;
+  top: 0;
+}
+
+.Fold a:hover {
+  color: black;
+}
+/*------------------------Fold-----------------------*/
+
+/*------------------------Border-----------------------*/
+.Border {
+  background-color: cornsilk;
+  position: relative;
+  z-index: 0;
+}
+
+.Border a {
+  text-decoration: none;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: red;
+  font-family: sans-serif;
+  position: relative;
+  text-transform: uppercase;
+  transition: color 1s;
+}
+
+.Border a:before {
+  content: " ";
+  left: -14px;
+  top: -43px;
+  position: absolute;
+  width: 370px;
+  height: 220px;
+  border-left: 7px solid red;
+  border-right: 7px solid rgb(36, 1, 236);
+  z-index: -1;
+  transition: all 1s;
+  transform: rotateY(0deg);
+}
+
+.Border a:hover:before {
+  transform: rotateY(180deg);
+}
+
+.Border a:after {
+  content: " ";
+  left: -59px;
+  top: -12px;
+  position: absolute;
+  width: 470px;
+  height: 145px;
+  border-top: 7px solid red;
+  border-bottom: 7px solid rgb(36, 1, 236);
+  z-index: -1;
+  transition: all 1s;
+  transform: rotateX(0deg);
+}
+
+.Border a:hover:after {
+  transform: rotateX(180deg);
+}
+
+.Border a:hover {
+  color: blue;
+}
+/*------------------------Border-----------------------*/
+
+/*------------------------Wave---------------------*/
+.Wave {
+  background-color: rgb(56, 56, 56);
+  position: relative;
+  z-index: 0;
+}
+
+.Wave a {
+  text-decoration: none;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: lightblue;
+  border: 5px solid lightblue;
+  font-family: sans-serif;
+  position: relative;
+  text-transform: uppercase;
+  transition: color 1s;
+  overflow: hidden;
+}
+
+.wave {
+  content: " ";
+  left: 0;
+  top: calc(100% + 22px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 176, 235);
+  z-index: -1;
+  transition: all 1.5s;
+}
+
+.wave::before {
+  content: " ";
+  position: absolute;
+  background-image: url(./wave.png);
+  top: -22px;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  animation: wavy 0.75s linear infinite;
+}
+
+.Wave a:hover .wave {
+  top: 0;
+}
+
+@keyframes wavy {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    background-position-x: 118px;
+  }
+}
+
+.Wave a:hover {
+  color: rgb(255, 255, 255);
+}
+/*------------------------Wave---------------------*/
+
+/*------------------------Shiny---------------------*/
+.Shiny {
+  background-color: black;
+  position: relative;
+  z-index: 0;
+}
+.Shiny a {
+  text-decoration: none;
+  border: 5px solid white;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.Shiny a:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  height: 30px;
+  width: 100%;
+  transform: translateX(-100%) rotate(45deg);
+  transition: all 1s;
+}
+
+.Shiny a:hover::before {
+  transform: translateX(100%) rotate(46deg);
+}
+
+.Shiny a:hover {
+  background-color: red;
+  color: black;
+}
+/*------------------------Shiny---------------------*/
+
+/*------------------------BorderGrow-----------------------*/
+.BorderGrow a {
+  text-decoration: none;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: red;
+  font-family: sans-serif;
+  position: relative;
+  text-transform: uppercase;
+  transition: color 1s, background-color 1s;
+  background-color: rgb(255, 231, 231);
+  border-radius: 2px;
+}
+
+.BorderGrow a:before {
+  content: " ";
+  left: -10px;
+  top: -10px;
+  position: absolute;
+  width: 2em;
+  height: 1.2em;
+  border-left: 5px solid red;
+  border-top: 5px solid rgb(36, 1, 236);
+  transition: all 1s;
+}
+
+.BorderGrow a:hover:before {
+  width: 10em;
+  height: 2.5em;
+}
+
+.BorderGrow a:after {
+  content: " ";
+  right: -10px;
+  bottom: -10px;
+  position: absolute;
+  width: 2em;
+  height: 1.2em;
+  border-right: 5px solid red;
+  border-bottom: 5px solid rgb(36, 1, 236);
+  transition: all 1s;
+}
+
+.BorderGrow a:hover:after {
+  width: 10em;
+  height: 2.5em;
+}
+
+.BorderGrow a:hover {
+  color: blue;
+  background-color: rgb(219, 255, 255);
+}
+/*------------------------BorderGrow-----------------------*/
+
+/*------------------------Circles-----------------------*/
+.Circles {
+  background-color: rgb(143, 187, 187);
+  position: relative;
+  z-index: 0;
+}
+
+.Circles a {
+  text-decoration: none;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  position: relative;
+  text-transform: uppercase;
+  transition: color 1s;
+  background-color: transparent;
+}
+
+.Circles a:before,
+.Circles a:after {
+  content: " ";
+  top: 50%;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: red;
+  z-index: -1;
+  transform: translateY(-50%);
+  transition: all 1s;
+  opacity: 0;
+}
+
+.Circles a:before {
+  left: 0;
+  box-shadow: -100px 0 0 red;
+}
+
+.Circles a:after {
+  right: 0;
+  box-shadow: 100px 0 0 red;
+}
+
+.Circles a:hover:before {
+  transform: translateX(-50%) translateY(-50%);
+  left: 50%;
+  opacity: 1;
+}
+
+.Circles a:hover:after {
+  transform: translateX(50%) translateY(-50%);
+  right: 50%;
+  opacity: 1;
+}
+
+.Circles span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: red;
+  z-index: -1;
+  transition: all 0.5s;
+  transform: scale(0);
+  border-radius: 8px;
+  opacity: 0;
+}
+
+.Circles a:hover span {
+  transform: scale(1);
+  transition-delay: 0.75s;
+  opacity: 1;
+}
+
+.Circles a:hover {
+  color: white;
+}
+/*------------------------Circles-----------------------*/
+
+/*------------------------Circles Fill-----------------------*/
+.CircleFill a {
+  text-decoration: none;
+  border: 5px solid red;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: red;
+  font-family: sans-serif;
+  position: relative;
+  text-transform: uppercase;
+  transition: color 1s;
+  overflow: hidden;
+}
+
+.CircleFill a:before {
+  content: " ";
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  z-index: -1;
+  border-radius: 100%;
+  transform: translateY(-100%);
+  transition: all 1s;
+}
+
+.CircleFill a:hover:before {
+  transform: translateY(0);
+  border-radius: 0;
+}
+
+.CircleFill a:hover {
+  color: white;
+}
+/*------------------------Circles Fill----------------------*/
+
+/*------------------------Layer Swap----------------------*/
+.LayerSwap {
+  background-color: rgb(31, 31, 31);
+  position: relative;
+  z-index: 0;
+}
+
+.LayerSwap a {
+  text-decoration: none;
+  border: 5px solid white;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  position: relative;
+  transition: color 1s;
+  overflow: hidden;
+}
+
+.LayerSwap a:before {
+  content: "Layer";
+  position: absolute;
+  color: white;
+  top: 0;
+  right: 0;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  transform-origin: bottom right;
+  transform: translate(0 0);
+  transition: all 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LayerSwap a:hover::before {
+  transform: translate(100%, -100%);
+}
+
+.LayerSwap a:after {
+  content: "Swap";
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  transform-origin: bottom right;
+  transform: translate(-100%, 100%);
+  transition: all 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LayerSwap a:hover::after {
+  transform: translate(0, 0);
+}
+
+.LayerSwap a:hover {
+  color: cyan;
+}
+/*------------------------Layer Swap----------------------*/
+
+/*------------------------Letter Rotate---------------------*/
+
+.LetterRotate a {
+  text-decoration: none;
+  border: 5px solid black;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  position: relative;
+}
+
+.LetterRotate a:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  transform: rotate(0deg);
+  transition: transform 1s;
+  z-index: -1;
+}
+
+.LetterRotate a:hover::before {
+  transform: rotate(18deg);
+}
+
+.LetterRotate span {
+  position: absolute;
+  left: 52px;
+  transition: all 1s;
+  transform: rotate(0deg) scale(1);
+}
+
+.LetterRotate a:hover span {
+  transform: rotate(720deg) scale(2.5);
+  left: 30px;
+}
+/*------------------------Letter Rotate---------------------*/
+
+/*------------------------Pulsing---------------------*/
+.Pulsing a {
+  text-decoration: none;
+  border-radius: 100px;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  position: absolute;
+  text-transform: uppercase;
+  background-color: white;
+  transition: all 0.5s;
+}
+
+.Pulsing a:before {
+  content: "";
+  top: 0;
+  right: 0;
+  border-radius: 100px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 1s;
+  background-color: rgb(255, 255, 255);
+  transform: scale(0);
+  opacity: 1;
+  z-index: -1;
+}
+
+.Pulsing a:hover::before {
+  transform: scale(2);
+  opacity: 0;
+}
+
+.Pulsing a:hover {
+  transform: translateY(-8px);
+  color: rgb(255, 159, 34);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.384);
+}
+/*------------------------Pulsing---------------------*/
+
+/*------------------------Rotate---------------------*/
+.Rotate a {
+  text-decoration: none;
+  border: 5px solid black;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: black;
+  font-family: sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.Rotate a:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  transform-origin: bottom right;
+  transform: rotate(90deg);
+  transition: transform 1s;
+  z-index: -1;
+}
+
+.Rotate a:hover::before {
+  transform: rotate(0deg);
+}
+/*------------------------Rotate---------------------*/
+
+/*------------------------Rotate4D---------------------*/
+.Rotate4D a {
+  text-decoration: none;
+  border: 5px solid black;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+  background-color: red;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.Rotate4D a:before {
+  content: "Rotate 4D";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  background-color: green;
+  height: 100%;
+  width: 100%;
+  transform-origin: top;
+  transform: rotateX(-270deg);
+  transition: all 0.5s;
+}
+
+.Rotate4D a:hover::before {
+  transform: rotateX(0deg);
+}
+
+.Rotate4D a:after {
+  content: "Rotate 4D";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  background-color: rgb(0, 63, 146);
+  height: 100%;
+  width: 100%;
+  transform-origin: bottom;
+  transform: rotateX(-270deg);
+  transition: all 1s;
+}
+
+.Rotate4D a:hover::after {
+  transform: rotateX(0deg);
+}
+/*------------------------Rotate4D---------------------*/
+
+/*------------------------Scale---------------------*/
+.Scale a {
+  text-decoration: none;
+  border: 5px solid rgb(0, 0, 0);
+  padding: 40px 80px;
+  font-size: 45px;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  position: relative;
+  text-transform: uppercase;
+  perspective: 200px;
+  overflow: hidden;
+}
+
+.Scale a:before {
+  content: "Scale Me";
+  top: 0;
+  right: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transition: all 1s;
+  background-color: black;
+  transform: scale(5);
+  opacity: 0;
+  color: white;
+}
+
+.Scale a:hover::before {
+  transform: translateZ(0px);
+  opacity: 1;
+}
+/*------------------------Scale---------------------*/
+
+/*-------------------------------------Split--------------------------------*/
+.Split a {
+  text-decoration: none;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: rgb(255, 217, 0);
+  background-color: transparent;
+  font-family: sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: color 1s;
+  border: 5px solid rgb(255, 217, 0);
+}
+
+.Split a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: yellow;
+  height: 100%;
+  width: 25%;
+  transform-origin: bottom;
+  transform: translateX(-100%) rotateX(90deg);
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.Split a:hover::before {
+  transform: rotateX(0deg) translateX(-100%);
+  opacity: 1;
+}
+
+.Split a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 75%;
+  background-color: yellow;
+  height: 100%;
+  width: 25%;
+  transform-origin: top;
+  transform: translateX(100%) rotateX(90deg);
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.Split a:hover::after {
+  transform: rotateX(0deg) translateX(100%);
+  opacity: 1;
+}
+
+.Split a:hover {
+  color: black;
+}
+
+.Split span {
+  content: "";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: -50%;
+  background-color: yellow;
+  height: 100%;
+  width: 25%;
+  transform-origin: bottom;
+  transform: translateX(100%);
+  transition: all 0.5s;
+  z-index: -1;
+  box-shadow: 405px 0 0 yellow;
+}
+
+.Split a:hover span {
+  transform: translateX(0);
+  box-shadow: 242px 0 0 yellow;
+  left: 0;
+  top: 0;
+}
+/*----------------------------------------Split------------------------------------*/
+
+/*------------------------Spread---------------------*/
+.Spread a {
+  text-decoration: none;
+  font-size: 40px;
+  border: 5px solid black;
+  padding: 40px 80px;
+  color: black;
+  transition: all 1s;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.Spread a:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 1s;
+  transform: rotateX(90deg);
+}
+
+.Spread a:hover::before {
+  transform: rotateX(0deg);
+}
+
+.Spread a:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 1s;
+  transform: rotateY(90deg);
+}
+
+.Spread a:hover::after {
+  transform: rotateY(0deg);
+}
+
+.Spread a:hover {
+  color: white;
+}
+/*------------------------Spread---------------------*/
+
+/*------------------------Stretch---------------------*/
+.Stretch a {
+  text-decoration: none;
+  border: 5px solid red;
+  padding: 40px 60px;
+  font-size: 35px;
+  color: red;
+  font-family: sans-serif;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  transition: all 1s;
+}
+
+.Stretch a:hover {
+  color: black;
+  transform: scale(100%);
+  border: 10px solid black;
+  font-size: 45px;
+  letter-spacing: 10px;
+}
+/*------------------------Stretch---------------------*/
+
+/*------------------------SwapRev---------------------*/
+.SwapRev a {
+  text-decoration: none;
+  border: 5px solid white;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  position: relative;
+  width: 100px;
+  height: 30px;
+}
+
+.SwapRev a:after {
+  content: "Reverse";
+  position: absolute;
+  color: white;
+  top: 0;
+  right: 0;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  transition: all 0.5s;
+  transform: translate(0%) rotateY(0deg) scale(1);
+  opacity: 1;
+}
+
+.SwapRev a:hover::after {
+  transform: translate(100%) rotateY(360deg) scale(0);
+  opacity: 0;
+}
+
+.SwapRev a:before {
+  content: "Swap";
+  position: absolute;
+  color: white;
+  top: 0;
+  right: 0;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  transform: translate(-100%) rotateY(0deg) scale(0);
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.SwapRev a:hover::before {
+  transform: translate(0, 0) rotateY(360deg) scale(1);
+  opacity: 1;
+}
+
+.SwapRev a:hover {
+  color: cyan;
+}
+/*------------------------SwapRev---------------------*/
+
+/*------------------------Swipe---------------------*/
+.Swipe a {
+  text-decoration: none;
+  border: 5px solid black;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: black;
+  font-family: sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: color 1s;
+}
+
+.Swipe a:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  transform-origin: bottom right;
+  transform: translateX(-100%);
+  transition: all 1s;
+  z-index: -1;
+}
+
+.Swipe a:hover::before {
+  transform: translateX(0%);
+}
+
+.Swipe a:hover {
+  color: white;
+}
+/*------------------------Swipe---------------------*/
+
+/*------------------------Swipe2---------------------*/
+.Swipe2 {
+  background-color: black;
+  position: relative;
+  z-index: 0;
+}
+
+.Swipe2 a {
+  text-decoration: none;
+  border: 5px solid white;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: color 1s;
+}
+
+.Swipe2 a:before {
+  content: "Changed ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  transform-origin: bottom right;
+  transform: translateY(-100%);
+  transition: all 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Swipe2 a:hover::before {
+  transform: translateY(0%);
+}
+
+.Swipe2 a:hover {
+  color: white;
+}
+/*------------------------Swipe2---------------------*/
